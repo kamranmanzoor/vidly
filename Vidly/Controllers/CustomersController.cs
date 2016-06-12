@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using Vidly.Models;
 
@@ -9,30 +10,29 @@ namespace Vidly.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            var customers = new List<Customer>
+            var customers = GetCustomers();
+
+            return View(customers);
+        }
+
+        private IEnumerable<Customer> GetCustomers()
+        {
+            return new List<Customer>()
             {
                 new Customer() {Name = "Kamran", Id = 1},
                 new Customer() {Name = "Manzoor", Id = 2}
             };
 
-            TempData["customers"] = customers;
 
-            ViewBag.Customers = customers;
-            return View();
         }
 
         public ActionResult Details(int id)
         {
-            string name = string.Empty;
+            var customer = GetCustomers().SingleOrDefault(c => id == c.Id);
+            if (customer == null)
+                return HttpNotFound();
 
-            if (TempData["customers"] != null)
-            {
-                //var customer = TempData["customers"] as Customer;
-                //var customer = (Object[])TempData["customers"];
-
-            }
-
-            return Content(name);
+            return View(customer);
         }
     }
 }
