@@ -178,9 +178,13 @@
     <Compile Include="Migrations\201606120226558_AddIsSubscribedToNewsLetter.Designer.cs">
       <DependentUpon>201606120226558_AddIsSubscribedToNewsLetter.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201606120236585_Add-Membership-Type.cs" />
-    <Compile Include="Migrations\201606120236585_Add-Membership-Type.Designer.cs">
-      <DependentUpon>201606120236585_Add-Membership-Type.cs</DependentUpon>
+    <Compile Include="Migrations\201606132306340_Add-MembershipType.cs" />
+    <Compile Include="Migrations\201606132306340_Add-MembershipType.Designer.cs">
+      <DependentUpon>201606132306340_Add-MembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606132309403_Populate-Membership-Types.cs" />
+    <Compile Include="Migrations\201606132309403_Populate-Membership-Types.Designer.cs">
+      <DependentUpon>201606132309403_Populate-Membership-Types.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -278,8 +282,11 @@
     <EmbeddedResource Include="Migrations\201606120226558_AddIsSubscribedToNewsLetter.resx">
       <DependentUpon>201606120226558_AddIsSubscribedToNewsLetter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606120236585_Add-Membership-Type.resx">
-      <DependentUpon>201606120236585_Add-Membership-Type.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606132306340_Add-MembershipType.resx">
+      <DependentUpon>201606132306340_Add-MembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606132309403_Populate-Membership-Types.resx">
+      <DependentUpon>201606132309403_Populate-Membership-Types.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
