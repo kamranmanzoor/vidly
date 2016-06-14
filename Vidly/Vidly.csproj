@@ -186,6 +186,14 @@
     <Compile Include="Migrations\201606132309403_Populate-Membership-Types.Designer.cs">
       <DependentUpon>201606132309403_Populate-Membership-Types.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606132325111_Apply-Annotaitons-To-CustomerName.cs" />
+    <Compile Include="Migrations\201606132325111_Apply-Annotaitons-To-CustomerName.Designer.cs">
+      <DependentUpon>201606132325111_Apply-Annotaitons-To-CustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606132350394_Adding-Movies.cs" />
+    <Compile Include="Migrations\201606132350394_Adding-Movies.Designer.cs">
+      <DependentUpon>201606132350394_Adding-Movies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -287,6 +295,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606132309403_Populate-Membership-Types.resx">
       <DependentUpon>201606132309403_Populate-Membership-Types.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606132325111_Apply-Annotaitons-To-CustomerName.resx">
+      <DependentUpon>201606132325111_Apply-Annotaitons-To-CustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606132350394_Adding-Movies.resx">
+      <DependentUpon>201606132350394_Adding-Movies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

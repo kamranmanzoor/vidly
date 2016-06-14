@@ -9,14 +9,26 @@ namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
+        #region Private Members
+        private ApplicationDbContext _context; 
+        #endregion
 
+        #region Constructor
+        public MoviesController()
+        {
+            _context = new ApplicationDbContext();
+        } 
+        #endregion
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
 
         #region Index Action
         public ActionResult Index()
         {
-            var movies = GetMovies();
-            if (movies == null)
-                return HttpNotFound();
+            var movies = _context.Movies.ToList();
             return View(movies);
         }
         #endregion
@@ -35,7 +47,7 @@ namespace Vidly.Controllers
 
         public ActionResult Details(int id)
         {
-            var movie = GetMovies().SingleOrDefault(m => m.Id == id);
+            var movie = _context.Movies.SingleOrDefault(m => m.Id == id);
             return View(movie);
         }
 
