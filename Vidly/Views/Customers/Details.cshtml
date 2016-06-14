@@ -12,6 +12,12 @@
             <th>Customer Id</th>
             <th>Customer Name</th>
             <th>Discount Rate</th>
+            <th>Membership Type</th>
+            @if (Model.Birthdate != null)
+            {
+                <th>Birthdate</th>
+            }
+
         </tr>
     </thead>
     <tbody>
@@ -19,7 +25,11 @@
             <td>@Model.Id</td>
             <td>@Model.Name</td>
             <td>@Model.MembershipType.DiscountRate%</td>
+            <td>@Model.MembershipType.Name</td>
+            @if (Model.Birthdate != null)
+            {
+                <td>@String.Format("{0:dd/MM/yyyy}", Model.Birthdate)   </td>
+            }
         </tr>
     </tbody>
 </table>
-

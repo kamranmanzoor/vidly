@@ -4,7 +4,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
 @if (!Model.Any())
 {
     <p>We don't have any Movies</p>
@@ -12,18 +11,22 @@
 else
 {
     <h2>List of Movies</h2>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Movie Name</th>
+                <th>Movie Genre</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var movie in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(movie.Name, "Details", new { movie.Id }, null)</td>
+                    <td>@movie.Genre.Name</td>
 
-    <ul>
-        @foreach (var movie in Model)
-        {
-            <li>
-                @Html.ActionLink(movie.Name, "Details", new { movie.Id }, null)
-            </li>
-
-        }
-
-    </ul>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
-
-
-

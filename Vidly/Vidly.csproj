@@ -194,9 +194,38 @@
     <Compile Include="Migrations\201606132350394_Adding-Movies.Designer.cs">
       <DependentUpon>201606132350394_Adding-Movies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606140009105_MembershipType-Add-Name-Prop.cs" />
+    <Compile Include="Migrations\201606140009105_MembershipType-Add-Name-Prop.Designer.cs">
+      <DependentUpon>201606140009105_MembershipType-Add-Name-Prop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606140019185_Update-Membership-Name.cs" />
+    <Compile Include="Migrations\201606140019185_Update-Membership-Name.Designer.cs">
+      <DependentUpon>201606140019185_Update-Membership-Name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606140032095_Customer-Birthdate-Addition.cs" />
+    <Compile Include="Migrations\201606140032095_Customer-Birthdate-Addition.Designer.cs">
+      <DependentUpon>201606140032095_Customer-Birthdate-Addition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606140119348_Drop-Movies-And-Add-Genre.cs" />
+    <Compile Include="Migrations\201606140119348_Drop-Movies-And-Add-Genre.Designer.cs">
+      <DependentUpon>201606140119348_Drop-Movies-And-Add-Genre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606140136598_Insert-Genre-Data.cs" />
+    <Compile Include="Migrations\201606140136598_Insert-Genre-Data.Designer.cs">
+      <DependentUpon>201606140136598_Insert-Genre-Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606140148270_Insert-Movies-Data.cs" />
+    <Compile Include="Migrations\201606140148270_Insert-Movies-Data.Designer.cs">
+      <DependentUpon>201606140148270_Insert-Movies-Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606140155088_Add-Movie-Properties.cs" />
+    <Compile Include="Migrations\201606140155088_Add-Movie-Properties.Designer.cs">
+      <DependentUpon>201606140155088_Add-Movie-Properties.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -301,6 +330,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606132350394_Adding-Movies.resx">
       <DependentUpon>201606132350394_Adding-Movies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606140009105_MembershipType-Add-Name-Prop.resx">
+      <DependentUpon>201606140009105_MembershipType-Add-Name-Prop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606140019185_Update-Membership-Name.resx">
+      <DependentUpon>201606140019185_Update-Membership-Name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606140032095_Customer-Birthdate-Addition.resx">
+      <DependentUpon>201606140032095_Customer-Birthdate-Addition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606140119348_Drop-Movies-And-Add-Genre.resx">
+      <DependentUpon>201606140119348_Drop-Movies-And-Add-Genre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606140136598_Insert-Genre-Data.resx">
+      <DependentUpon>201606140136598_Insert-Genre-Data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606140148270_Insert-Movies-Data.resx">
+      <DependentUpon>201606140148270_Insert-Movies-Data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606140155088_Add-Movie-Properties.resx">
+      <DependentUpon>201606140155088_Add-Movie-Properties.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
