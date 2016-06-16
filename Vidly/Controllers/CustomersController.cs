@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using  System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using Vidly.Models;
@@ -30,14 +29,21 @@ namespace Vidly.Controllers
             return View(customers);
         }
 
-        
+
         public ActionResult Details(int id)
         {
-            var customer = _context.Customers.Include(c=> c.MembershipType).SingleOrDefault(c => c.Id == id); //GetCustomers().SingleOrDefault(c => id == c.Id);
+            var customer = _context.Customers.Include(c => c.MembershipType).SingleOrDefault(c => c.Id == id); //GetCustomers().SingleOrDefault(c => id == c.Id);
             if (customer == null)
                 return HttpNotFound();
 
             return View(customer);
         }
+
+        public ActionResult New()
+        {
+            return View();
+        }
+
+
     }
 }
