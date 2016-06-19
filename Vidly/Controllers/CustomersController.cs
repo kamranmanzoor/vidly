@@ -1,7 +1,5 @@
 ﻿using System.Data.Entity;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Web.Configuration;
 using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
@@ -35,7 +33,7 @@ namespace Vidly.Controllers
 
         public ActionResult Details(int id)
         {
-            var customer = _context.Customers.Include(c => c.MembershipType).SingleOrDefault(c => c.Id == id); //GetCustomers().SingleOrDefault(c => id == c.Id);
+            var customer = _context.Customers.Include(c => c.MembershipType).SingleOrDefault(c => c.Id == id); 
             if (customer == null)
                 return HttpNotFound();
 

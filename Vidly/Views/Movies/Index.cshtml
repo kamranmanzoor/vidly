@@ -10,12 +10,13 @@
 }
 else
 {
+    @Html.ActionLink("New Movie", "MovieForm", "Movies", null, new { @class = "btn btn-primary" })
     <h2>List of Movies</h2>
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
-                <th>Movie Name</th>
-                <th>Movie Genre</th>
+                <th>Name</th>
+                <th>Genre</th>
             </tr>
         </thead>
         <tbody>
@@ -24,7 +25,6 @@ else
                 <tr>
                     <td>@Html.ActionLink(movie.Name, "Details", new { movie.Id }, null)</td>
                     <td>@movie.Genre.Name</td>
-
                 </tr>
             }
         </tbody>
