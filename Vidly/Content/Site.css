@@ -26,3 +26,15 @@ textarea {
 .margin-top-20 {
     margin-top: 20px;
 }
+
+.field-validation-error {
+    border: 2px solid red;
+}
+
+.input-validation-error {
+    color: red;
+}
+
+.validation-summary-errors {
+    color: red;
+}

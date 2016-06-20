@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web.Mvc;
 using Vidly.Models;
@@ -69,7 +68,7 @@ namespace Vidly.Controllers
 
             if (movie == null)
                 return HttpNotFound();
-            
+
             var movieForm = new MovieFormViewModel
             {
                 Genre = _context.Genres.ToList(),
@@ -77,7 +76,7 @@ namespace Vidly.Controllers
             };
 
 
-            return View("MovieForm",movieForm);
+            return View("MovieForm", movieForm);
         }
 
 
@@ -108,7 +107,7 @@ namespace Vidly.Controllers
         }
         #endregion
 
-        
+
         #region Index Old
         //public ActionResult Index(int? pageIndex, string sortBy)
         //{
