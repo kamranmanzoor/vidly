@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web.Mvc;
 using Vidly.Models;
@@ -10,14 +12,14 @@ namespace Vidly.Controllers
     public class MoviesController : Controller
     {
         #region Private Members
-        private ApplicationDbContext _context; 
+        private ApplicationDbContext _context;
         #endregion
 
         #region Constructor
         public MoviesController()
         {
             _context = new ApplicationDbContext();
-        } 
+        }
         #endregion
 
         protected override void Dispose(bool disposing)
@@ -35,20 +37,47 @@ namespace Vidly.Controllers
 
         private IEnumerable<Movie> GetMovies()
         {
-            return  new List<Movie>()
+            return new List<Movie>()
             {
                 new Movie(){ Duration = "80",Id = 1, Name = "Shrek"},
                 new Movie(){ Duration = "60",Id = 2, Name = "Harry Potter"}
             };
         }
 
-        
-
 
         public ActionResult Details(int id)
         {
             var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == id);
             return View(movie);
+        }
+
+
+        public ActionResult New()
+        {
+            var genre = _context.Genres.ToList();
+            var movieForm = new MovieFormViewModel
+            {
+                Genre = genre
+            };
+
+            return View("MovieForm", movieForm);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var movie = _context.Movies.SingleOrDefault(m => m.Id == id);
+
+            if (movie == null)
+                return HttpNotFound();
+            
+            var movieForm = new MovieFormViewModel
+            {
+                Genre = _context.Genres.ToList(),
+                Movie = movie
+            };
+
+
+            return View("MovieForm",movieForm);
         }
 
 
@@ -76,16 +105,10 @@ namespace Vidly.Controllers
 
 
 
-        } 
+        }
         #endregion
 
-        #region Edit
-        public ActionResult Edit(int id)
-        {
-            return Content("id =" + id);
-        } 
-        #endregion
-
+        
         #region Index Old
         //public ActionResult Index(int? pageIndex, string sortBy)
         //{
@@ -106,10 +129,29 @@ namespace Vidly.Controllers
             if (!month.HasValue)
                 month = 10;
             return Content(year + "/" + month);
-        } 
+        }
         #endregion
 
-        
+        [HttpPost]
+        public ActionResult SaveMovie(Movie movie)
+        {
+            if (movie.Id == 0)
+            {
+                movie.DateAdded = DateTime.Now;
+                _context.Movies.Add(movie);
+            }
+            else
+            {
+                var movieInDb = _context.Movies.Single(m => m.Id == movie.Id);
+                movieInDb.Name = movie.Name;
+                movieInDb.GenreId = movie.GenreId;
+                movieInDb.NumberInStock = movie.NumberInStock;
+                movieInDb.ReleaseDate = movie.ReleaseDate;
+            }
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Movies");
+
+        }
     }
 
 }

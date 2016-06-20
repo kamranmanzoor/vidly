@@ -10,7 +10,7 @@
 }
 else
 {
-    @Html.ActionLink("New Movie", "MovieForm", "Movies", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("New Movie", "New", "Movies", null, new { @class = "btn btn-primary" })
     <h2>List of Movies</h2>
     <table class="table table-bordered table-hover">
         <thead>
@@ -23,7 +23,7 @@ else
             @foreach (var movie in Model)
             {
                 <tr>
-                    <td>@Html.ActionLink(movie.Name, "Details", new { movie.Id }, null)</td>
+                    <td>@Html.ActionLink(movie.Name, "Edit", new { movie.Id }, null)</td>
                     <td>@movie.Genre.Name</td>
                 </tr>
             }
