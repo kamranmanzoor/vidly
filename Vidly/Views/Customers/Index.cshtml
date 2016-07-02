@@ -1,12 +1,11 @@
 ﻿@using Microsoft.Ajax.Utilities
-@model IEnumerable<Vidly.Models.Customer>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-    <h2>List of Customers</h2>
+@Html.ActionLink("New Customer", "New", "Customers", null, new { @class = "btn btn-primary" })
+    <h2>Customers</h2>
 <table id="customers" class="table table-bordered table-hover">
     <thead>
     <tr>

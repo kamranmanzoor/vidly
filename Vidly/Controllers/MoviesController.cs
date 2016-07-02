@@ -29,8 +29,7 @@ namespace Vidly.Controllers
         #region Index Action
         public ActionResult Index()
         {
-            var movies = _context.Movies.Include(m => m.Genre).ToList();
-            return View(movies);
+            return View();
         }
         #endregion
 
@@ -78,7 +77,7 @@ namespace Vidly.Controllers
             return View("MovieForm", movieForm);
         }
 
-        
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
