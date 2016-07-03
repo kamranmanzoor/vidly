@@ -29,7 +29,10 @@ namespace Vidly.Controllers
         #region Index Action
         public ActionResult Index()
         {
-            return View();
+            if (User.IsInRole(RoleName.CanMnageMovies))
+                return View("List");
+
+            return View("ReadOnlyList");
         }
         #endregion
 
@@ -49,7 +52,7 @@ namespace Vidly.Controllers
             return View(movie);
         }
 
-
+        [Authorize(Roles = RoleName.CanMnageMovies)]
         public ActionResult New()
         {
             var genre = _context.Genres.ToList();
