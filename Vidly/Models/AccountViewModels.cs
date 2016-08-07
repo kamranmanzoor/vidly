@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Vidly.Models
@@ -12,6 +13,11 @@ namespace Vidly.Models
         [Required]
         [Display(Name = "Driving License")]
         public string DrivingLicense { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        [DisplayName("Phone Number")]
+        public string Phone { get; set; }
     }
 
     public class ExternalLoginListViewModel
@@ -87,6 +93,11 @@ namespace Vidly.Models
         [Required]
         [Display(Name = "Driving License")]
         public string DrivingLicense { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        [DisplayName("Phone Number")]
+        public string Phone { get; set; }
 
     }
 
